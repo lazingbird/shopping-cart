@@ -1,13 +1,13 @@
 import Logo from "./Logo";
-import List from "../helpers/List";
+import List from "./helpers/List";
 
-import navbarData from "../../data/navbarData";
+import navbarData from "../data/navbarData";
 
 const Navbar = () => {
   return (
     <>
-      <header className="">
-        <nav className="display: flex h-20 items-center justify-between bg-purple-950 px-4 text-slate-200">
+      <header className=" h-screen bg-purple-900">
+        <nav className="display: flex h-20 items-center justify-between px-3 pt-10 text-slate-200">
           <Logo></Logo>
           <List items={navbarData.productItems} />
           <List items={navbarData.userItems} />
