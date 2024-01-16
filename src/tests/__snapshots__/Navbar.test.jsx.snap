@@ -1,0 +1,68 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Navbar component > renders navigation items properly 1`] = `
+<div>
+  <nav>
+    <h1>
+      MuitoJogo
+    </h1>
+    <ul
+      class="list"
+    >
+      <li>
+        <a
+          href="#"
+        >
+          Steam
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+        >
+          Nintendo
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+        >
+          Playstation
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+        >
+          Xbox
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+        >
+          Créditos para Jogos
+        </a>
+      </li>
+    </ul>
+    <ul
+      class="list"
+    >
+      <li>
+        <a
+          href="#"
+        >
+          Conta
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+        >
+          Carrinho
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
