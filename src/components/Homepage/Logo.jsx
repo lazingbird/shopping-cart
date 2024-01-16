@@ -1,5 +1,6 @@
+import logo from "../../assets/muitojogo.png";
 const Logo = () => {
-  return <h1 className="">MuitoJogo</h1>;
+  return <img className="display: flex h-10" src={logo} />;
 };
 
 export default Logo;

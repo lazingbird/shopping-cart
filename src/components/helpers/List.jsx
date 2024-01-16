@@ -5,9 +5,9 @@ import ListElement from "./ListElement";
 
 const List = ({ items }) => {
   return (
-    <ul className="list">
+    <ul className="display: flex gap-4">
       {items.map((item) => (
-        <ListElement item={item} />
+        <ListElement key={item.name} item={item} />
       ))}
     </ul>
   );
