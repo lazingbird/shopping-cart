@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import SlideContainer from "./SlideContainer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -44,11 +44,26 @@ const ImageCarousel = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(true);
 
+  const autoPlayRef = useRef();
+
+  useEffect(() => {
+    autoPlayRef.current = handleNext;
+  });
+
+  useEffect(() => {
+    const play = () => {
+      autoPlayRef.current();
+    };
+
+    const interval = setInterval(play, 10 * 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   const imageTransition = () => {
     setIsLoaded(false);
     setTimeout(() => {
       setIsLoaded(true);
-    }, 100);
+    }, 120);
   };
 
   const handleNext = () => {
@@ -56,7 +71,7 @@ const ImageCarousel = () => {
     if (imageIndex + 1 === imageCarouselData.length) {
       return setImageIndex(0);
     }
-    setImageIndex(imageIndex + 1);
+    return setImageIndex(imageIndex + 1);
   };
 
   const handlePrev = () => {
@@ -64,7 +79,7 @@ const ImageCarousel = () => {
     if (imageIndex === 0) {
       return setImageIndex(imageCarouselData.length - 1);
     }
-    setImageIndex(imageIndex - 1);
+    return setImageIndex(imageIndex - 1);
   };
   return (
     <section className="flex  flex-col items-center justify-center pt-28">
