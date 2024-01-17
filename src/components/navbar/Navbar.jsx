@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import List from "../helpers/List";
+import List from "../reusable/List";
 
 import navbarData from "../../data/navbarData";
 
