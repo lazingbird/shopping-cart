@@ -1,9 +1,9 @@
-import Navbar from "./Navbar";
+import Navbar from "../navbar/Navbar";
 const Homepage = () => {
   return (
     <>
       <header>
-        <Navbar></Navbar>
+        <Navbar focus={"Home"}></Navbar>
       </header>
     </>
   );

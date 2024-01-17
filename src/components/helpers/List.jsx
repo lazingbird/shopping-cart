@@ -6,7 +6,7 @@ import ListElement from "./ListElement";
 const List = ({ items, focus }) => {
   if (items.length === 2) {
     return (
-      <ul className="display: flex gap-4">
+      <ul className="display: flex">
         {items.map((item) => (
           <ListElement key={item.name} item={item} />
         ))}
@@ -14,7 +14,7 @@ const List = ({ items, focus }) => {
     );
   }
   return (
-    <ul className="display: flex border-2 border-solid border-slate-200 first:bg-black">
+    <ul className="display: flex rounded-3xl border-solid border-slate-800 shadow first:bg-black">
       {items.map((item) => (
         <ListElement focus={focus} key={item.name} item={item} />
       ))}
