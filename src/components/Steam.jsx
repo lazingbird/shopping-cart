@@ -3,13 +3,15 @@ import List from "./helpers/List";
 
 import navbarData from "../data/navbarData";
 
-const Navbar = () => {
+const Steam = () => {
+  const defaultColor = navbarData.productItems[1].color;
+  console.log(defaultColor);
   return (
     <>
-      <header className=" h-screen bg-purple-900">
+      <header className=" h-screen" style={{ backgroundColor: defaultColor }}>
         <nav className="display: flex h-20 items-center justify-between px-3 pt-10 text-slate-200">
           <Logo></Logo>
-          <List focus="Home" items={navbarData.productItems} />
+          <List focus="Steam" items={navbarData.productItems} />
           <List items={navbarData.userItems} />
         </nav>
       </header>
@@ -17,4 +19,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Steam;

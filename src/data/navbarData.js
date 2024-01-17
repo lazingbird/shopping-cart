@@ -15,27 +15,27 @@ const productItems = [
   {
     name: "Home",
     icon: faHouse,
-    color: "text-purple-900",
+    color: "#581c87",
   },
   {
     name: "Steam",
     icon: faSteam,
-    color: "text-blue-900",
+    color: "#1e3a8a",
   },
   {
     name: "Playstation",
     icon: faPlaystation,
-    color: "text-red-900",
+    color: "#7f1d1d",
   },
   {
     name: "Xbox",
     icon: faXbox,
-    color: "text-green-900",
+    color: "#14532d",
   },
   {
     name: "Créditos para Jogos",
     icon: faCoins,
-    color: "text-pink-900",
+    color: "#831843",
   },
 ];
 
