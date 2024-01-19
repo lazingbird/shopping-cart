@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import Navbar from "../Navbar/Navbar";
 import Carousel from "../carousels/Carousel";
-import CarouselImage from "../carousels/ImgSmallCarousel";
+import CarouselImage from "../carousels/CarouselImage";
 
 import imageCarouselData from "../../data/imageCarouselData";
 

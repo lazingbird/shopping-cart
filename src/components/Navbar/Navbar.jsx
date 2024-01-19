@@ -13,7 +13,7 @@ const Navbar = ({ focus }) => {
           <Logo></Logo>
           <List focus={focus} items={navbarData.productItems} />
           <div className="flex gap-3">
-            <div className="flex">
+            <div className="hidden xl:flex">
               <input
                 name="search"
                 className=" flex rounded-none bg-gray-200 p-3 text-black placeholder:text-black/50  focus:outline-none"

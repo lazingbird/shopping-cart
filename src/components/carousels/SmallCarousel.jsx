@@ -37,8 +37,8 @@ const SmallCarousel = ({
     <>
       <ChevronLeft
         onClick={handlePrev}
-        className="min-w-10 cursor-pointer pl-2 text-purple-700 hover:scale-110"
-        size={35}
+        className="min-w-10 cursor-pointer pl-3 text-purple-700 hover:scale-110"
+        size={30}
         style={{ visibility: ` ${hideLeftChevron ? "hidden" : "visible"}` }}
       />
       <div className=" wrapper flex w-9/12  overflow-hidden">
@@ -51,8 +51,8 @@ const SmallCarousel = ({
       </div>
       <ChevronRight
         onClick={handleNext}
-        className="min-w-10 cursor-pointer pr-2 text-purple-700 hover:scale-110 "
-        size={35}
+        className="min-w-10 cursor-pointer pr-3 text-purple-700 hover:scale-110 "
+        size={30}
         style={{ visibility: ` ${hideRightChevron ? "hidden" : "visible"}` }}
       />
     </>
