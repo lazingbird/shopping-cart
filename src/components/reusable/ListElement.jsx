@@ -11,7 +11,7 @@ const ListElement = ({ item, focus }) => {
   return (
     <Link
       id={item.name}
-      className={` rounded-3xl  transition duration-500 ease-out first:rounded-l-3xl  has-[:focus]:bg-black has-[:hover]:opacity-50`}
+      className={` flex items-center  transition duration-500 ease-out  has-[:focus]:bg-black has-[:hover]:opacity-50`}
       style={{
         backgroundColor: item.name === focus ? item.color : "",
         color: item.name === focus ? "#e2e8f0" : "#020617",

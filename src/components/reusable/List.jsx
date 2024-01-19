@@ -14,7 +14,7 @@ const List = ({ items, focus }) => {
     );
   }
   return (
-    <ul className="mr-28 hidden rounded-3xl border-solid border-slate-800  first:bg-black lg:flex">
+    <ul className="ml-56 hidden border-solid border-slate-800  first:bg-black lg:flex">
       {items.map((item) => (
         <ListElement focus={focus} key={item.name} item={item} />
       ))}

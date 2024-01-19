@@ -35,13 +35,13 @@ const ImageCarousel = ({
       <div className=" absolute inset-0 flex items-center justify-between p-4 text-purple-800">
         <button
           onClick={handlePrev}
-          className="rounded-full bg-white/60  p-1 shadow-xl hover:bg-white"
+          className=" bg-white/90  p-1 shadow-xl hover:bg-white"
         >
           <ChevronLeft size={40} />
         </button>
         <button
           onClick={handleNext}
-          className="hover:bgwhite rounded-full bg-white/60 p-1 shadow-xl hover:bg-white"
+          className="hover:bgwhite  bg-white/90 p-1 shadow-xl hover:bg-white"
         >
           <ChevronRight size={40} />
         </button>
@@ -58,7 +58,7 @@ const ImageCarousel = ({
         </div>
       </div>
       <div className="absolute bottom-6 right-8  scale-75 md:scale-100 ">
-        <button className="text-md flex items-center justify-center gap-3 rounded-md bg-white  p-4 font-extrabold text-purple-800 shadow-lg hover:bg-purple-800 hover:text-white">
+        <button className="text-md flex items-center justify-center gap-3  bg-white  p-4 font-extrabold text-purple-800 shadow-lg hover:bg-purple-800 hover:text-white">
           <ShoppingCart />
           R$ 199,90
         </button>
