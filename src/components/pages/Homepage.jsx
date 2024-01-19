@@ -1,3 +1,4 @@
+import Footer from "../Footer/Footer";
 import HomeHeader from "../headers/HomeHeader";
 import HomeMain from "../mains/HomeMain";
 
@@ -10,9 +11,7 @@ const Homepage = () => {
       <main className="flex flex-col  items-center">
         <HomeMain></HomeMain>
       </main>
-      <footer>
-        <div></div>
-      </footer>
+      <Footer></Footer>
     </>
   );
 };
