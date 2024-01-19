@@ -13,7 +13,7 @@ const CarouselImage = ({ data, index, onlyImage }) => {
   }
   return (
     <div key={index + 10} className="shadow-lg">
-      <img className="" src={data.image}></img>
+      <img src={data.image} alt={`Capa do jogo ${data.title}`}></img>
       <div className="h-18 flex items-end justify-between   bg-gray-950 p-3 text-white">
         <div className=" flex flex-col gap-3">
           <div className="flex gap-2">
