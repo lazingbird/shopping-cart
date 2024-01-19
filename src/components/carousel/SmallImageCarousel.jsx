@@ -39,30 +39,25 @@ const SmallImageCarousel = ({
     return () => clearInterval(slideInterval);
   }, []);
 
-  const handleDrag = (event, position) => {
-    drag.current = event.target;
-    drag.current.scrollLeft = event.pageX;
-  };
   return (
     <>
       <ChevronLeft
         onClick={handlePrev}
-        className="cursor-pointer text-purple-700 hover:scale-110"
+        className="min-w-10 cursor-pointer pl-3 text-purple-700 hover:scale-110"
         size={35}
         style={{ visibility: ` ${hideLeftChevron ? "hidden" : "visible"}` }}
       />
-      <div className=" wrapper flex w-9/12 flex-row overflow-hidden">
+      <div className=" wrapper flex w-9/12  overflow-hidden">
         <div
-          className="slide flex h-44 gap-2 shadow-3xl transition-transform duration-500 ease-in-out"
+          className="slide flex gap-5 shadow-3xl transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${current * 12.5}%) ` }}
-          onDrag={(event) => handleDrag(event)}
         >
           {slides}
         </div>
       </div>
       <ChevronRight
         onClick={handleNext}
-        className="cursor-pointer text-purple-700 hover:scale-110 "
+        className="min-w-10 cursor-pointer pr-3 text-purple-700 hover:scale-110 "
         size={35}
         style={{ visibility: ` ${hideRightChevron ? "hidden" : "visible"}` }}
       />

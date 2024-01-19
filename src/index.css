@@ -2,13 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  width: 100vw;
-}
-
 .wrapper {
   max-width: 1640px;
-  min-width: 500px;
+  min-width: 320px;
 }
 
 .slide img {

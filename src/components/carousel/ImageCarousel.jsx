@@ -25,7 +25,7 @@ const ImageCarousel = ({
     return () => clearInterval(slideInterval);
   }, []);
   return (
-    <div className="relative w-5/12 overflow-hidden">
+    <div className="relative w-full overflow-hidden md:w-7/12 lg:w-5/12">
       <div
         className=" flex transition-transform duration-500 ease-out"
         style={{ transform: `translateX(-${current * 100}%)` }}
@@ -46,19 +46,19 @@ const ImageCarousel = ({
           <ChevronRight size={40} />
         </button>
       </div>
-      <div className="absolute bottom-4 left-5 right-0">
+      <div className="absolute bottom-4 left-0 right-0">
         <div className="flex  items-center justify-center gap-2">
           {slides.map((_, index) => (
             <div
               key={index}
               onClick={() => handleDot(index)}
-              className={`h-3 w-3 cursor-pointer rounded-full bg-white transition-all hover:bg-opacity-80 ${current === index ? "p-2" : "bg-opacity-50"}`}
+              className={`h-2 w-2 cursor-pointer rounded-full bg-white transition-all hover:bg-opacity-80 ${current === index ? "p-1.5" : "bg-opacity-50"}`}
             />
           ))}
         </div>
       </div>
-      <div className="absolute bottom-4  right-8 ">
-        <button className="flex gap-3 rounded-lg  bg-white  p-4 font-extrabold text-purple-800 shadow-lg hover:bg-purple-800 hover:text-white">
+      <div className="absolute bottom-6 right-8  scale-75 md:scale-100 ">
+        <button className="text-md flex items-center justify-center gap-3 rounded-md bg-white  p-4 font-extrabold text-purple-800 shadow-lg hover:bg-purple-800 hover:text-white">
           <ShoppingCart />
           R$ 199,90
         </button>
