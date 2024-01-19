@@ -32,9 +32,9 @@ const Homepage = () => {
           </ImageCarousel>
         </div>
       </header>
-      <main className="flex flex-col items-center">
-        <div className="w-8/12">
-          <h3 className="mb-1 mt-12 self-start text-left text-2xl font-bold ">
+      <main className="flex flex-col  items-center">
+        <div className="flex min-w-80 sm:w-8/12">
+          <h3 className="mb-1  mt-10 self-start text-2xl font-bold ">
             Mais vendidos
           </h3>
         </div>
