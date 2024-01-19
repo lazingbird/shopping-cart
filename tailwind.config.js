@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       boxShadow: {
-        "3xl": "rgba(0, 0, 0, 0.24) 0px 3px 8px;",
+        "3xl":
+          "rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px",
       },
       fontFamily: {
         quicksand: ["Quicksand", "sans-serif"],

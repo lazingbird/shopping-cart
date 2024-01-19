@@ -1,116 +1,69 @@
 import { useState, useEffect, useRef } from "react";
 
-import SlideContainer from "./SlideContainer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ChevronLeft, ChevronRight, ShoppingCart } from "react-feather";
 
-import {
-  faChevronLeft,
-  faChevronRight,
-  faCircle,
-} from "@fortawesome/free-solid-svg-icons";
-import imageCarouselData from "../../data/imageCarouselData";
+const ImageCarousel = ({
+  children: slides,
+  autoSlide = false,
+  autoSlideInterval = 7000,
+}) => {
+  const [current, setCurrent] = useState(0);
 
-const Dots = ({ imageIndex, setImageIndex, isLoaded, setIsLoaded }) => {
-  const dots = [0, 1, 2, 3];
-
-  const imageTransition = () => {
-    setIsLoaded(false);
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 100);
+  const handleDot = (index) => {
+    setCurrent(index);
   };
 
-  const handleClickDot = (dot) => {
-    imageTransition();
-    setImageIndex(dot);
-  };
+  const handlePrev = () =>
+    setCurrent((current) => (current === 0 ? slides.length - 1 : current - 1));
 
-  return (
-    <div className="flex gap-1">
-      {dots.map((dot) => (
-        <span
-          key={dot}
-          onClick={() => handleClickDot(dot)}
-          className={`mt-4 cursor-pointer select-none text-xs transition delay-100 duration-200 ease-in-out hover:opacity-70 ${isLoaded ? "opacity-100" : "opacity-50"} ${imageIndex === dot ? "text-purple-900" : "text-slate-300 "}`}
-        >
-          ⬤
-        </span>
-      ))}
-    </div>
-  );
-};
-
-const ImageCarousel = () => {
-  const [imageIndex, setImageIndex] = useState(0);
-  const [isLoaded, setIsLoaded] = useState(true);
-
-  const autoPlayRef = useRef();
+  const handleNext = () =>
+    setCurrent((current) => (current === slides.length - 1 ? 0 : current + 1));
 
   useEffect(() => {
-    autoPlayRef.current = handleNext;
-  });
-
-  useEffect(() => {
-    const play = () => {
-      autoPlayRef.current();
-    };
-
-    const interval = setInterval(play, 10 * 1000);
-    return () => clearInterval(interval);
+    if (!autoSlide) return;
+    const slideInterval = setInterval(handleNext, autoSlideInterval);
+    return () => clearInterval(slideInterval);
   }, []);
-
-  const imageTransition = () => {
-    setIsLoaded(false);
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 120);
-  };
-
-  const handleNext = () => {
-    imageTransition();
-    if (imageIndex + 1 === imageCarouselData.length) {
-      return setImageIndex(0);
-    }
-    return setImageIndex(imageIndex + 1);
-  };
-
-  const handlePrev = () => {
-    imageTransition();
-    if (imageIndex === 0) {
-      return setImageIndex(imageCarouselData.length - 1);
-    }
-    return setImageIndex(imageIndex - 1);
-  };
   return (
-    <section className="flex  flex-col items-center justify-center pt-28">
-      <div className="flex items-center ">
-        <FontAwesomeIcon
-          className="size-12 cursor-pointer select-none hover:text-purple-900"
-          icon={faChevronLeft}
-          onClick={handlePrev}
-        ></FontAwesomeIcon>
-        {imageCarouselData.map((data, index) => (
-          <SlideContainer
-            key={index}
-            data={data}
-            index={index}
-            imageIndex={imageIndex}
-            isLoaded={isLoaded}
-          ></SlideContainer>
-        ))}
-        <FontAwesomeIcon
-          onClick={handleNext}
-          className="size-12 cursor-pointer select-none hover:text-purple-900"
-          icon={faChevronRight}
-        ></FontAwesomeIcon>
+    <div className="relative w-5/12 overflow-hidden">
+      <div
+        className=" flex transition-transform duration-500 ease-out"
+        style={{ transform: `translateX(-${current * 100}%)` }}
+      >
+        {slides}
       </div>
-      <Dots
-        imageIndex={imageIndex}
-        setImageIndex={setImageIndex}
-        isLoaded={isLoaded}
-        setIsLoaded={setIsLoaded}
-      ></Dots>
-    </section>
+      <div className=" absolute inset-0 flex items-center justify-between p-4 text-purple-800">
+        <button
+          onClick={handlePrev}
+          className="rounded-full bg-white/60  p-1 shadow-xl hover:bg-white"
+        >
+          <ChevronLeft size={40} />
+        </button>
+        <button
+          onClick={handleNext}
+          className="hover:bgwhite rounded-full bg-white/60 p-1 shadow-xl hover:bg-white"
+        >
+          <ChevronRight size={40} />
+        </button>
+      </div>
+      <div className="absolute bottom-4 left-5 right-0">
+        <div className="flex  items-center justify-center gap-2">
+          {slides.map((_, index) => (
+            <div
+              key={index}
+              onClick={() => handleDot(index)}
+              className={`h-3 w-3 cursor-pointer rounded-full bg-white transition-all hover:bg-opacity-80 ${current === index ? "p-2" : "bg-opacity-50"}`}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="absolute bottom-4  right-8 ">
+        <button className="flex gap-3 rounded-lg  bg-white  p-4 font-extrabold text-purple-800 shadow-lg hover:bg-purple-800 hover:text-white">
+          <ShoppingCart />
+          R$ 199,90
+        </button>
+      </div>
+    </div>
   );
 };
 
