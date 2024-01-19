@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 import { ChevronLeft, ChevronRight, ShoppingCart } from "react-feather";
 
-const SmallImageCarousel = ({
+const SmallCarousel = ({
   children: slides,
   autoSlide = false,
   autoSlideInterval = 7000,
@@ -10,12 +10,6 @@ const SmallImageCarousel = ({
   const [current, setCurrent] = useState(0);
   const [hideLeftChevron, setHideLeftChevron] = useState(true);
   const [hideRightChevron, setHideRightChevron] = useState(false);
-
-  const drag = useRef();
-
-  const handleDot = (index) => {
-    setCurrent(index);
-  };
 
   const handlePrev = () => {
     setCurrent((current) => (current === 0 ? slides.length - 1 : current - 1));
@@ -65,4 +59,4 @@ const SmallImageCarousel = ({
   );
 };
 
-export default SmallImageCarousel;
+export default SmallCarousel;

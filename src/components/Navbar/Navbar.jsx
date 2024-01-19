@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import List from "../reusable/List";
+import List from "../lists/List";
 
 import navbarData from "../../data/navbarData";
 
@@ -15,6 +15,7 @@ const Navbar = ({ focus }) => {
           <div className="flex gap-3">
             <div className="flex">
               <input
+                name="search"
                 className=" flex rounded-none bg-gray-200 p-3 text-black placeholder:text-black/50  focus:outline-none"
                 type="text"
                 placeholder="Pesquise pelo seu jogo :)"

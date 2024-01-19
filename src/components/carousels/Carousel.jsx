@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 import { ChevronLeft, ChevronRight, ShoppingCart } from "react-feather";
 
-const ImageCarousel = ({
+const Carousel = ({
   children: slides,
   autoSlide = false,
   autoSlideInterval = 7000,
@@ -67,4 +67,4 @@ const ImageCarousel = ({
   );
 };
 
-export default ImageCarousel;
+export default Carousel;
