@@ -2,7 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.container {
-  width: 314px;
-  height: 176px;
+html {
+  width: 100vw;
+}
+
+.wrapper {
+  max-width: 1640px;
+  min-width: 500px;
+}
+
+.slide img {
+  max-width: 313px;
 }

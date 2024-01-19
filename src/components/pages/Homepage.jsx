@@ -12,9 +12,9 @@ const ImageContainer = (index, data) => {
 const Homepage = () => {
   return (
     <>
-      <header className="">
+      <header>
         <Navbar focus={"Home"}></Navbar>
-        <div className="flex w-full justify-center bg-gray-200">
+        <div className="flex justify-center bg-gray-200">
           <ImageCarousel autoSlide={true}>
             {imageCarouselData.map((data, index) => (
               <img key={index + 50} src={data.image}></img>
@@ -22,19 +22,19 @@ const Homepage = () => {
           </ImageCarousel>
         </div>
       </header>
-      <main className="w-fit-content odd:scale-120 flex flex-col items-center">
-        <div className="w-9/12">
+      <main className="flex flex-col items-center">
+        <div className="w-8/12">
           <h3 className="mb-1 mt-12 w-9/12 self-start text-left text-2xl font-bold ">
             Mais vendidos
           </h3>
         </div>
-        <SmallImageCarousel data={smallImageCarouselData}>
-          {smallImageCarouselData.map((data, index) => (
-            <>
-              <img className="w-ful" key={index + 10} src={data.image}></img>
-            </>
-          ))}
-        </SmallImageCarousel>
+        <div className="flex items-center justify-center">
+          <SmallImageCarousel data={smallImageCarouselData}>
+            {smallImageCarouselData.map((data, index) => (
+              <img key={index + 10} src={data.image}></img>
+            ))}
+          </SmallImageCarousel>
+        </div>
       </main>
     </>
   );
