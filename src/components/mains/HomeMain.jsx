@@ -7,7 +7,7 @@ import smallImageCarouselData from "../../data/smallImageCarouselData";
 const HomeMain = () => {
   return (
     <>
-      <section className=" mt-10 flex flex-col justify-center">
+      <section className=" mt-10 hidden flex-col justify-center lg:flex">
         <h3 className="mx-64 mb-1 mt-10 self-start text-3xl font-bold"></h3>
         <div className="max-w-8/12 flex justify-center gap-4">
           <img
