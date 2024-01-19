@@ -10,6 +10,9 @@ const Homepage = () => {
       <main className="flex flex-col  items-center">
         <HomeMain></HomeMain>
       </main>
+      <footer>
+        <div></div>
+      </footer>
     </>
   );
 };
