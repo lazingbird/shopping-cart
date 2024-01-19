@@ -7,26 +7,21 @@ import smallImageCarouselData from "../../data/smallImageCarouselData";
 const HomeMain = () => {
   return (
     <>
-      <section className=" mt-10 hidden flex-col justify-center lg:flex">
-        <h3 className="mx-64 mb-1 mt-10 self-start text-3xl font-bold"></h3>
-        <div className="max-w-8/12 flex justify-center gap-4">
+      <section className=" mt-10 hidden flex-col items-center justify-center lg:flex">
+        <div className="mark-grid w-8/12 items-center justify-center">
           <img
-            className="h-full w-2/12 cursor-pointer"
+            className="h-full w-full cursor-pointer"
             src="src/assets/playstation-cartão.png"
-            alt=""
-            srcset=""
           />
           <img
-            className="h-full w-2/12 cursor-pointer"
+            className="h-full w-full cursor-pointer"
             src="src/assets/xbox-cartão.png"
             alt=""
             srcset=""
           />
           <img
-            className="h-full w-4/12 cursor-pointer"
+            className="col-span-2 cursor-pointer"
             src="src/assets/freefire-créditos.gif"
-            alt=""
-            srcset=""
           />
         </div>
       </section>
