@@ -27,7 +27,7 @@ const CarouselImage = ({ data, index, onlyImage }) => {
         </div>
         <button className="flex items-center justify-center gap-3 bg-gray-700  p-3  text-sm font-bold text-white shadow-lg hover:bg-gray-600 hover:text-white">
           <ShoppingCart size={20} />
-          R$ 199,90
+          {data.price}
         </button>
       </div>
     </div>

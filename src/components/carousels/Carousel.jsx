@@ -69,7 +69,7 @@ const Carousel = ({
       <div className="absolute bottom-6 right-8  scale-75 md:scale-100 ">
         <button className="text-md flex items-center justify-center gap-3  bg-white  p-4 font-extrabold text-purple-800 shadow-lg hover:bg-purple-800 hover:text-white">
           <ShoppingCart />
-          R$ 199,90
+          {games[current].price}
         </button>
       </div>
     </div>
