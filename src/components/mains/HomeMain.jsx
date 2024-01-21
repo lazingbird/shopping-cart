@@ -1,12 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
-import axios from "axios";
 import games from "../../services/games";
 
 import { useState, useEffect } from "react";
 
 import SmallCarousel from "../carousels/SmallCarousel";
 import CarouselImage from "../carousels/CarouselImage";
-import smallImageCarouselData from "../../data/smallImageCarouselData";
 import fakeProducts from "../../data/fakeProducts";
 
 const HomeMain = () => {
@@ -23,7 +21,6 @@ const HomeMain = () => {
           };
         }),
       );
-      console.log(result);
       setSmallCarouselData(result);
     };
     fetchData();
@@ -60,7 +57,7 @@ const HomeMain = () => {
           </h3>
         </div>
         <div className="flex w-full  items-center justify-center">
-          <SmallCarousel data={smallImageCarouselData}>
+          <SmallCarousel data={smallCarouselData}>
             {smallCarouselData.map((data, index) => (
               <CarouselImage
                 key={uuidv4()}
