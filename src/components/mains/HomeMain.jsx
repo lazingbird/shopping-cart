@@ -1,11 +1,37 @@
 import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
+import games from "../../services/games";
+
+import { useState, useEffect } from "react";
 
 import SmallCarousel from "../carousels/SmallCarousel";
 import CarouselImage from "../carousels/CarouselImage";
 import smallImageCarouselData from "../../data/smallImageCarouselData";
-import Footer from "../Footer/Footer";
+import fakeProducts from "../../data/fakeProducts";
 
 const HomeMain = () => {
+  const [smallCarouselData, setSmallCarouselData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await Promise.all(
+        fakeProducts.smallCarouselFakeProducts.map(async (item) => {
+          let request = await games.getById(item.rawg_id);
+          return {
+            ...item,
+            data: request,
+          };
+        }),
+      );
+      console.log(result);
+      setSmallCarouselData(result);
+    };
+    fetchData();
+  }, []);
+
+  if (smallCarouselData === null) {
+    return;
+  }
   return (
     <>
       <section className=" mt-10 hidden flex-col items-center justify-center lg:flex">
@@ -35,7 +61,7 @@ const HomeMain = () => {
         </div>
         <div className="flex w-full  items-center justify-center">
           <SmallCarousel data={smallImageCarouselData}>
-            {smallImageCarouselData.map((data, index) => (
+            {smallCarouselData.map((data, index) => (
               <CarouselImage
                 key={uuidv4()}
                 data={data}

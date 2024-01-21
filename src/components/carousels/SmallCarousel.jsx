@@ -44,7 +44,7 @@ const SmallCarousel = ({
       <div className=" wrapper flex w-9/12  overflow-hidden">
         <div
           className="slide flex gap-5 shadow-3xl transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${current * 12.5}%) ` }}
+          style={{ transform: `translateX(-${current * 12.6}%) ` }}
         >
           {slides}
         </div>

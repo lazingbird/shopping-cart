@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight, ShoppingCart } from "react-feather";
 
 const Carousel = ({
+  games,
   children: slides,
   autoSlide = false,
   autoSlideInterval = 7000,
@@ -13,17 +14,20 @@ const Carousel = ({
     setCurrent(index);
   };
 
-  const handlePrev = () =>
+  const handlePrev = () => {
     setCurrent((current) => (current === 0 ? slides.length - 1 : current - 1));
+  };
 
-  const handleNext = () =>
+  const handleNext = () => {
     setCurrent((current) => (current === slides.length - 1 ? 0 : current + 1));
+  };
 
   useEffect(() => {
     if (!autoSlide) return;
     const slideInterval = setInterval(handleNext, autoSlideInterval);
     return () => clearInterval(slideInterval);
-  }, []);
+  }, [slides]);
+
   return (
     <div className="relative w-full overflow-hidden md:w-7/12 lg:w-5/12">
       <div
@@ -56,6 +60,11 @@ const Carousel = ({
             />
           ))}
         </div>
+      </div>
+      <div className="absolute left-8 top-6  scale-75 md:scale-100 ">
+        <h1 className="text-md flex items-center justify-center gap-3  bg-white  p-4 font-extrabold text-purple-800 shadow-lg hover:bg-purple-800 hover:text-white">
+          {games[current].data.name}
+        </h1>
       </div>
       <div className="absolute bottom-6 right-8  scale-75 md:scale-100 ">
         <button className="text-md flex items-center justify-center gap-3  bg-white  p-4 font-extrabold text-purple-800 shadow-lg hover:bg-purple-800 hover:text-white">
