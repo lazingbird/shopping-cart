@@ -151,6 +151,12 @@ const smallCarouselFakeProducts = [
   },
   {
     id: uuidv4(),
+    title: "Grand Theft Auto V",
+    price: "R$40,90",
+    rawg_id: 3498,
+  },
+  {
+    id: uuidv4(),
     title: "Bomb Rush Cyberfunk",
     price: "R$ 107,90",
     rawg_id: 471018,
@@ -184,12 +190,6 @@ const smallCarouselFakeProducts = [
     title: "Avowed",
     price: "R$ 299,90",
     rawg_id: 471025,
-  },
-  {
-    id: uuidv4(),
-    title: "Oxygen Not Included",
-    price: "R$ 50,90",
-    rawg_id: 9880,
   },
 ];
 

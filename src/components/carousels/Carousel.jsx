@@ -36,7 +36,7 @@ const Carousel = ({
       >
         {slides}
       </div>
-      <div className=" absolute inset-0 flex items-center justify-between p-4 text-purple-800">
+      <div className="absolute inset-0 flex items-center justify-between p-4 text-purple-800">
         <button
           onClick={handlePrev}
           className=" bg-white/90  p-1 shadow-xl hover:bg-white"

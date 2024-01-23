@@ -9,6 +9,7 @@ import {
   faUser,
   faCartShopping,
   faHouse,
+  faList,
 } from "@fortawesome/free-solid-svg-icons";
 
 const productItems = [
@@ -17,6 +18,7 @@ const productItems = [
     icon: faHouse,
     color: "#581c87",
   },
+
   {
     name: "Steam",
     icon: faSteam,
@@ -36,6 +38,11 @@ const productItems = [
     name: "Créditos para Jogos",
     icon: faCoins,
     color: "#831843",
+  },
+  {
+    name: "Todos produtos",
+    icon: faList,
+    color: "#155e75",
   },
 ];
 

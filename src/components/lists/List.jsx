@@ -8,13 +8,13 @@ const List = ({ items, focus }) => {
     return (
       <ul className="flex">
         {items.map((item) => (
-          <ListElement key={item.name} item={item} />
+          <ListElement textColor={"text-white"} key={item.name} item={item} />
         ))}
       </ul>
     );
   }
   return (
-    <ul className="hidden border-solid border-slate-800 first:bg-black  lg:flex xl:ml-56">
+    <ul className="hidden border-solid border-slate-800  lg:flex ">
       {items.map((item) => (
         <ListElement focus={focus} key={item.name} item={item} />
       ))}
