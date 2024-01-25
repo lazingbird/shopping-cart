@@ -16,7 +16,7 @@ const productItems = [
   {
     name: "Home",
     icon: faHouse,
-    color: "#581c87",
+    color: "#4B1248",
   },
 
   {
@@ -40,9 +40,9 @@ const productItems = [
     color: "#831843",
   },
   {
-    name: "Todos produtos",
+    name: "Todos Produtos",
     icon: faList,
-    color: "#155e75",
+    color: "#1d0b38",
   },
 ];
 

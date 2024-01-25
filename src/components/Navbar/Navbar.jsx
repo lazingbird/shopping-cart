@@ -10,17 +10,19 @@ const Navbar = ({ focus }) => {
     <>
       <header className="">
         <nav className="flex w-full flex-col items-center justify-between   text-slate-200">
-          <div className="flex h-20 w-full items-center justify-between bg-purple-900  px-3 pb-3 pt-3 text-slate-200">
+          <div className="bg-roxoMuitoJogo flex h-20 w-full items-center justify-between  px-3 pb-3 pt-3 text-slate-200">
             <Logo></Logo>
             <div className="hidden lg:mr-20 lg:flex">
               <input
                 name="search"
+                autoComplete="off"
+                role="presentation"
                 className="w-50 rounded-none bg-white p-3 text-black placeholder:text-black/50 focus:outline-none lg:flex  lg:w-96"
                 type="text"
                 placeholder="Pesquise pelo seu jogo :)"
               />
               <button className="bg-slate-200 px-3 hover:opacity-90">
-                <Search className="text-purple-900"></Search>
+                <Search className="text-roxoMuitoJogo"></Search>
               </button>
             </div>
             <div className="flex gap-3">

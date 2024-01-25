@@ -12,7 +12,7 @@ const CarouselImage = ({ data, index, onlyImage }) => {
     return <img key={data.data.id} src={data.data.background_image}></img>;
   }
   return (
-    <div key={index + 10} className="shadow-lg">
+    <div className="shadow-lg">
       <img
         className=""
         src={data.data.background_image}

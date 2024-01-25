@@ -23,12 +23,7 @@ const allFakeProducts = [
     price: "R$ 179,90",
     rawg_id: 3703,
   },
-  {
-    id: uuidv4(),
-    title: "Catherine",
-    price: "R$ 199,90",
-    rawg_id: 4466,
-  },
+
   {
     id: uuidv4(),
     title: "Kusan: City of Wolves",

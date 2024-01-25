@@ -36,7 +36,7 @@ const Carousel = ({
       >
         {slides}
       </div>
-      <div className="absolute inset-0 flex items-center justify-between p-4 text-purple-800">
+      <div className="text-roxoMuitoJogo absolute inset-0 flex items-center justify-between p-4">
         <button
           onClick={handlePrev}
           className=" bg-white/90  p-1 shadow-xl hover:bg-white"
@@ -62,12 +62,12 @@ const Carousel = ({
         </div>
       </div>
       <div className="absolute left-8 top-6  scale-75 md:scale-100 ">
-        <h1 className="text-md flex items-center justify-center gap-3  bg-white  p-4 font-extrabold text-purple-800 shadow-lg hover:bg-purple-800 hover:text-white">
+        <h1 className="text-md text-roxoMuitoJogo hover:bg-roxoMuitoJogo flex items-center  justify-center  gap-3 bg-white p-4 font-extrabold shadow-lg hover:text-white">
           {games[current].data.name}
         </h1>
       </div>
       <div className="absolute bottom-6 right-8  scale-75 md:scale-100 ">
-        <button className="text-md flex items-center justify-center gap-3  bg-white  p-4 font-extrabold text-purple-800 shadow-lg hover:bg-purple-800 hover:text-white">
+        <button className="text-md text-roxoMuitoJogo hover:bg-roxoMuitoJogo flex items-center  justify-center  gap-3 bg-white p-4 font-extrabold shadow-lg hover:text-white">
           <ShoppingCart />
           {games[current].price}
         </button>
