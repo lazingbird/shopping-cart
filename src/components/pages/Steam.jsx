@@ -1,5 +1,6 @@
 import Navbar from "../Navbar/Navbar";
 import SteamMain from "../mains/SteamMain";
+import Footer from "../Footer/Footer";
 
 const Steam = () => {
   return (
@@ -7,7 +8,10 @@ const Steam = () => {
       <header>
         <Navbar focus={"Steam"}></Navbar>
       </header>
-      <SteamMain />
+      <main>
+        <SteamMain />
+      </main>
+      <Footer />
     </>
   );
 };
