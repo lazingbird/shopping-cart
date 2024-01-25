@@ -26,29 +26,41 @@ const CatalogMain = () => {
   const itemPerPage = 12;
 
   useEffect(() => {
-    const fetchData = async () => {
+    const calcPages = () => {
       let nextPage = 2;
       let tempPages = [1];
-      const result = await Promise.all(
-        fakeProducts.allFakeProducts.map(async (item, index) => {
-          console.log((index + 1) % 12);
-          if ((index + 1) % 12 === 0) {
-            tempPages.push(nextPage);
-            nextPage = nextPage + 1;
-          }
-          let request = await games.getById(item.rawg_id);
-          return {
-            ...item,
-            data: request,
-          };
-        }),
+      fakeProducts.allFakeProducts.map((prod, index) => {
+        if ((index + 1) % 12 === 0) {
+          tempPages.push(nextPage);
+          nextPage = nextPage + 1;
+        }
+      });
+
+      return tempPages;
+    };
+
+    const fetchData = async () => {
+      let result = await Promise.all(
+        fakeProducts.allFakeProducts
+          .slice(currentPage * 12, currentPage * 12 + 12)
+          .map(async (item, index) => {
+            let request = await games.getById(item.rawg_id);
+            return {
+              ...item,
+              data: request,
+            };
+          }),
       );
       setProducts(result);
       setTotalProducts(result.length);
-      setPages(tempPages);
+      setPages(calcPages());
     };
     fetchData();
-  }, []);
+  }, [currentPage]);
+
+  const handleUpdatePage = async (page) => {
+    setCurrentPage(page);
+  };
 
   if (products === null) {
     return;
@@ -59,10 +71,9 @@ const CatalogMain = () => {
         Todos Produtos
       </h2>
       <div className="catalog-grid grid w-8/12 ">
-        <ShowPage page={currentPage} products={products}></ShowPage>
-        {/* {products.slice(0, itemPerPage).map((product) => (
-          <CatalogProducts key={uuidv4()} data={product} />
-        ))} */}
+        {products.map((product) => (
+          <CatalogProducts key={uuidv4()} data={product}></CatalogProducts>
+        ))}
       </div>
       <div className="mt-5 flex gap-5">
         {pages.map((pageNumber) => (
@@ -70,7 +81,7 @@ const CatalogMain = () => {
             style={{
               fontWeight: pageNumber - 1 === currentPage ? "bold" : "thin",
             }}
-            onClick={() => setCurrentPage(pageNumber - 1)}
+            onClick={() => handleUpdatePage(pageNumber - 1)}
             key={uuidv4()}
           >
             {pageNumber}
