@@ -25,23 +25,24 @@ const CatalogMain = () => {
 
   const itemPerPage = 12;
 
+  const calcPages = () => {
+    let nextPage = 2;
+    let tempPages = [1];
+    fakeProducts.allFakeProducts.map((prod, index) => {
+      if ((index + 1) % itemPerPage === 0) {
+        tempPages.push(nextPage);
+        nextPage = nextPage + 1;
+      }
+    });
+
+    return tempPages;
+  };
+
   useEffect(() => {
-    const calcPages = () => {
-      let nextPage = 2;
-      let tempPages = [1];
-      fakeProducts.allFakeProducts.map((prod, index) => {
-        if ((index + 1) % itemPerPage === 0) {
-          tempPages.push(nextPage);
-          nextPage = nextPage + 1;
-        }
-      });
-
-      return tempPages;
-    };
-
     const fetchData = async () => {
       let result = await Promise.all(
         fakeProducts.allFakeProducts
+          .sort((a, b) => (a.title > b.title ? 1 : -1))
           .slice(
             currentPage * itemPerPage,
             currentPage * itemPerPage + itemPerPage,

@@ -22,7 +22,7 @@ const CatalogProducts = ({ data }) => {
               <FontAwesomeIcon icon={faSteam} />
               <FontAwesomeIcon icon={faWindows} />
             </div>
-            <p className=" text-xs font-extrabold">{data.data.name}</p>
+            <p className=" text-xs font-extrabold">{data.title}</p>
           </div>
           <button className="flex items-center justify-center gap-3 bg-gray-700  p-3  text-sm font-bold text-white shadow-lg hover:bg-gray-600 hover:text-white">
             <ShoppingCart size={15} />
