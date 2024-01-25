@@ -30,7 +30,7 @@ const CatalogMain = () => {
       let nextPage = 2;
       let tempPages = [1];
       fakeProducts.allFakeProducts.map((prod, index) => {
-        if ((index + 1) % 12 === 0) {
+        if ((index + 1) % itemPerPage === 0) {
           tempPages.push(nextPage);
           nextPage = nextPage + 1;
         }
@@ -42,7 +42,10 @@ const CatalogMain = () => {
     const fetchData = async () => {
       let result = await Promise.all(
         fakeProducts.allFakeProducts
-          .slice(currentPage * 12, currentPage * 12 + 12)
+          .slice(
+            currentPage * itemPerPage,
+            currentPage * itemPerPage + itemPerPage,
+          )
           .map(async (item, index) => {
             let request = await games.getById(item.rawg_id);
             return {
