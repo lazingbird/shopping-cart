@@ -6,18 +6,7 @@ import { useState, useEffect } from "react";
 
 import CatalogProducts from "./CatalogProducts";
 
-const ShowPage = ({ page, products }) => {
-  let productList = products.slice(page * 12, page * 12 + 12);
-  return (
-    <>
-      {productList.map((product) => (
-        <CatalogProducts key={uuidv4()} data={product}></CatalogProducts>
-      ))}
-    </>
-  );
-};
-
-const CatalogMain = () => {
+const SteamMain = () => {
   const [products, setProducts] = useState(null);
   const [pages, setPages] = useState([1]);
   const [totalProducts, setTotalProducts] = useState(0);
@@ -72,7 +61,7 @@ const CatalogMain = () => {
   return (
     <section className="mt-10 flex flex-col items-center">
       <h2 className="mb-6 text-3xl font-bold text-roxoMuitoJogo">
-        Todos Produtos
+        Os melhores jogos na Steam com os melhores preços
       </h2>
       <div className="catalog-grid grid w-8/12 ">
         {products.map((product) => (
@@ -96,4 +85,4 @@ const CatalogMain = () => {
   );
 };
 
-export default CatalogMain;
+export default SteamMain;
