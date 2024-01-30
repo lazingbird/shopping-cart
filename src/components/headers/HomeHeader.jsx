@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 import games from "../../services/games";
 
 import { useState, useEffect } from "react";
+import { Suspense } from "react";
 
 import Navbar from "../Navbar/Navbar";
 import Carousel from "../carousels/Carousel";
@@ -29,10 +30,10 @@ const HomeHeader = () => {
   }, []);
 
   if (carouselData === null) {
-    return;
+    return <Navbar focus={"Home"}></Navbar>;
   }
   return (
-    <>
+    <header>
       <Navbar focus={"Home"}></Navbar>
       <div className="flex w-full justify-center bg-gray-200">
         <Carousel games={carouselData} autoSlide={true}>
@@ -46,7 +47,7 @@ const HomeHeader = () => {
           ))}
         </Carousel>
       </div>
-    </>
+    </header>
   );
 };
 

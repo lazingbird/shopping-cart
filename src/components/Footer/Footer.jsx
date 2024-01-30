@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-roxoMuitoJogo mt-24 flex h-72 w-full flex-col items-center justify-center gap-5 md:h-96 md:items-stretch">
+    <footer className="mt-24 flex h-72 w-full flex-col items-center justify-center gap-5 bg-roxoMuitoJogo md:h-96 md:items-stretch">
       <div className="mt-14 flex flex-col items-start justify-around gap-7 text-xs text-white md:items-center lg:flex-row">
         <div>
           <p>PAGUE COM FACILIDADE, RECEBA INSTANTANEAMENTE.</p>
@@ -9,10 +9,10 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex gap-8">
-          <button className="text-roxoMuitoJogo bg-white p-3 shadow-2xl hover:opacity-50">
+          <button className="bg-white p-3 text-roxoMuitoJogo shadow-2xl hover:opacity-50">
             MEUS PEDIDOS
           </button>
-          <button className="text-roxoMuitoJogo bg-white p-3 shadow-2xl hover:opacity-50">
+          <button className="bg-white p-3 text-roxoMuitoJogo shadow-2xl hover:opacity-50">
             LOGIN
           </button>
         </div>

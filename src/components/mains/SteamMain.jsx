@@ -5,6 +5,7 @@ import fakeProducts from "../../data/fakeProducts";
 import { useState, useEffect } from "react";
 
 import CatalogProducts from "./CatalogProducts";
+import Footer from "../Footer/Footer";
 
 const SteamMain = () => {
   const [products, setProducts] = useState(null);
@@ -59,29 +60,34 @@ const SteamMain = () => {
     return;
   }
   return (
-    <section className="mt-10 flex flex-col items-center">
-      <h2 className="mb-6 text-3xl font-bold text-roxoMuitoJogo">
-        Os melhores jogos na Steam com os melhores preços
-      </h2>
-      <div className="catalog-grid grid w-8/12 ">
-        {products.map((product) => (
-          <CatalogProducts key={uuidv4()} data={product}></CatalogProducts>
-        ))}
-      </div>
-      <div className="mt-5 flex gap-5">
-        {pages.map((pageNumber) => (
-          <button
-            style={{
-              fontWeight: pageNumber - 1 === currentPage ? "bold" : "thin",
-            }}
-            onClick={() => handleUpdatePage(pageNumber - 1)}
-            key={uuidv4()}
-          >
-            {pageNumber}
-          </button>
-        ))}
-      </div>
-    </section>
+    <>
+      <main>
+        <section className="mt-10 flex flex-col items-center">
+          <h2 className="mb-6 text-3xl font-bold text-roxoMuitoJogo">
+            Os melhores jogos na Steam com os melhores preços
+          </h2>
+          <div className="catalog-grid grid w-8/12 ">
+            {products.map((product) => (
+              <CatalogProducts key={uuidv4()} data={product}></CatalogProducts>
+            ))}
+          </div>
+          <div className="mt-5 flex gap-5">
+            {pages.map((pageNumber) => (
+              <button
+                style={{
+                  fontWeight: pageNumber - 1 === currentPage ? "bold" : "thin",
+                }}
+                onClick={() => handleUpdatePage(pageNumber - 1)}
+                key={uuidv4()}
+              >
+                {pageNumber}
+              </button>
+            ))}
+          </div>
+        </section>
+      </main>
+      <Footer></Footer>
+    </>
   );
 };
 

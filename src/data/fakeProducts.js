@@ -10,6 +10,45 @@ const fetchDataByID = async (id) => {
   return data;
 };
 
+const playstationProducts = [
+  {
+    id: uuidv4(),
+    title: "Plus: 3 Meses de Assinatura - Digital [Exclusivo Brasil]",
+    price: "R$84,90",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2020/10/Playstation-3-meses.png",
+  },
+  {
+    id: uuidv4(),
+    title: "Plus: 12 Meses de Assinatura - Digital [Exclusivo Brasil]",
+    price: "R$199,90",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2020/10/Playstation-12-meses.png",
+  },
+  {
+    id: uuidv4(),
+    title: "R$250 - Cartão Presente Playstation Store",
+    price: "R$250,00",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2021/04/Playstation-R250.jpg",
+  },
+  {
+    id: uuidv4(),
+    title: "R$100 - Cartão Presente Playstation Store",
+    price: "R$100,00",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2021/04/Playstation-R100.jpg",
+  },
+  {
+    id: uuidv4(),
+    title: "R$60 - Cartão Presente Playstation Store",
+    price: "R$60,00",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2021/04/Playstation-R60.jpg",
+  },
+  {
+    id: uuidv4(),
+    title: "R$30 - Cartão Presente Playstation Store",
+    price: "R$30,00",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2021/04/Playstation-R30.jpg",
+  },
+];
+
 const allFakeProducts = [
   {
     id: uuidv4(),
@@ -23,7 +62,6 @@ const allFakeProducts = [
     price: "R$ 179,90",
     rawg_id: 3703,
   },
-
   {
     id: uuidv4(),
     title: "Kusan: City of Wolves",
@@ -192,4 +230,5 @@ export default {
   allFakeProducts,
   carouselFakeProducts,
   smallCarouselFakeProducts,
+  playstationProducts,
 };
