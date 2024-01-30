@@ -41,7 +41,7 @@ const Playstation = () => {
             </div>
           </div>
           <img
-            className="size-5/12"
+            className="hidden size-5/12 xl:block"
             src="https://www.muitojogo.com.br/wp-content/uploads/2020/10/PlaystationCard-768x768.png.webp"
           ></img>
         </section>
@@ -49,7 +49,7 @@ const Playstation = () => {
           <h2 className="mt-10 flex place-self-start text-3xl font-bold text-roxoMuitoJogo">
             Gift cards - Playstation
           </h2>
-          <div className="mt-3 flex gap-5">
+          <div className="playstation-grid mt-3 gap-5">
             {fakeProducts.playstationProducts.slice(2, 6).map((product) => (
               <div key={product.id}>
                 <img
