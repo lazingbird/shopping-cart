@@ -10,6 +10,75 @@ const fetchDataByID = async (id) => {
   return data;
 };
 
+const xboxProducts = [
+  {
+    id: uuidv4(),
+    title: "Assinatura Xbox Game Pass Core: 3 Meses",
+    price: "R$85,99",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2020/10/Assinatura-Xbox-Live-Gold-3-Meses.png",
+  },
+  {
+    id: uuidv4(),
+    title: "Assinatura Xbox Game Pass Core: 12 Meses",
+    price: "R$199,90",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2020/10/Assinatura-Xbox-Live-Gold-12-Meses.png",
+  },
+  {
+    id: uuidv4(),
+    title: "R$200 - Cartão Presente Xbox",
+    price: "R$200,00",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2021/05/Cartao-Presente-do-Xbox-200-reais.png",
+  },
+  {
+    id: uuidv4(),
+    title: "R$70 - Cartão Presente Xbox",
+    price: "R$70,00",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2022/08/Cartao-Presente-do-Xbox-70-reais.png",
+  },
+  {
+    id: uuidv4(),
+    title: "R$60 - Cartão Presente Xbox",
+    price: "R$60,00",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2022/08/Cartao-Presente-do-Xbox-60-reais.png",
+  },
+  {
+    id: uuidv4(),
+    title: "R$50 - Cartão Presente Xbox",
+    price: "R$50,00",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2021/05/Cartao-Presente-do-Xbox-50-reais.png",
+  },
+  {
+    id: uuidv4(),
+    title: "R$40 - Cartão Presente Xbox",
+    price: "R$40,00",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2021/04/Cartao-Presente-do-Xbox-40-reais.png",
+  },
+  {
+    id: uuidv4(),
+    title: "R$25 - Cartão Presente Xbox",
+    price: "R$25,00",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2022/08/Cartao-Presente-do-Xbox-25-reais.png",
+  },
+  {
+    id: uuidv4(),
+    title: "R$20 - Cartão Presente Xbox",
+    price: "R$20,00",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2022/08/Cartao-Presente-do-Xbox-20-reais.png",
+  },
+  {
+    id: uuidv4(),
+    title: "R$15 - Cartão Presente Xbox",
+    price: "R$15,00",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2022/08/Cartao-Presente-do-Xbox-15-reais.png",
+  },
+  {
+    id: uuidv4(),
+    title: "R$5 - Cartão Presente Xbox",
+    price: "R$5,00",
+    img: "https://www.muitojogo.com.br/wp-content/uploads/2022/06/Cartao-Presente-do-Xbox-5-reais.png",
+  },
+];
+
 const playstationProducts = [
   {
     id: uuidv4(),
@@ -231,4 +300,5 @@ export default {
   carouselFakeProducts,
   smallCarouselFakeProducts,
   playstationProducts,
+  xboxProducts,
 };
