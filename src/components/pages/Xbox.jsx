@@ -12,14 +12,14 @@ const Xbox = () => {
         <section className="flex w-9/12 grid-cols-2 gap-20">
           <div>
             <h2 className=" text-4xl font-bold text-roxoMuitoJogo">
-              CARTÃO PSN, GIFT CARD PS4 E MUITO MAIS
+              GIFT CARD XBOX, JOGOS E MUITO MAIS
             </h2>
             <h3 className="mt-2 text-xl font-bold">
-              Os melhores gift cards, cartões da psn e playstation plus para
-              você aproveitar ao máximo seu serviço Playstation.
+              Os melhores gift cards, cartões do Xbox para você aproveitar ao
+              máximo promoções e ofertas da plataforma.
             </h3>
             <p className="mt-3 text-2xl font-bold text-roxoMuitoJogo">
-              OFERTAS PERSONALIZADAS
+              XBOX GAME PASS
             </p>
             <div className="mt-2 flex gap-5">
               {fakeProducts.xboxProducts.slice(0, 2).map((product) => (

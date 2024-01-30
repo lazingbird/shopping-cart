@@ -34,11 +34,11 @@ const productItems = [
     icon: faXbox,
     color: "#4B1248",
   },
-  {
-    name: "Créditos para Jogos",
-    icon: faCoins,
-    color: "#4B1248",
-  },
+  // {
+  //   name: "Créditos para Jogos",
+  //   icon: faCoins,
+  //   color: "#4B1248",
+  // },
 ];
 
 const userItems = [
