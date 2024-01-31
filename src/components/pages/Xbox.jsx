@@ -61,7 +61,7 @@ const Xbox = ({ cart, setCart }) => {
             </div>
           </div>
           <img
-            className="size-5/12"
+            className="hidden size-5/12 xl:block"
             src="https://www.muitojogo.com.br/wp-content/uploads/2021/04/XboxLive.jpg.webp"
           ></img>
         </section>

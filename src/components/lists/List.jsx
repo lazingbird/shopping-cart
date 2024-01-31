@@ -14,7 +14,7 @@ const List = ({ items, focus }) => {
     );
   }
   return (
-    <ul className="hidden border-solid border-slate-800  lg:flex ">
+    <ul className="grid grid-cols-2 border-solid border-slate-800  sm:flex ">
       {items.map((item) => (
         <ListElement focus={focus} key={item.name} item={item} />
       ))}

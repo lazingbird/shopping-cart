@@ -39,7 +39,7 @@ const Navbar = ({ focus }) => {
               <List items={navbarData.userItems} />
             </div>
           </div>
-          <div className="hidden items-center justify-center bg-white py-2 text-center lg:flex">
+          <div className="flex items-center justify-center bg-white py-2 text-center">
             <List focus={focus} items={navbarData.productItems} />
           </div>
         </nav>
