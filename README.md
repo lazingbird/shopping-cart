@@ -1,6 +1,6 @@
 [Live Preview](https://shopping-cart-o43v3npnk-lazingbirds-projects.vercel.app/)
 
-# Shopping Cart (Digital games and related products e-commerce mockup)
+# Shopping Cart (Front-end e-commerce mockup for digital games and related products)
 
 Study project for the **The Odin Project** course to practice React and learn how to handle routes with React Router. Styled with Tailwind and deployed to Vercel. Game data fetched from the [RAWG Video Game API](https://rawg.io/apidocs).
 
