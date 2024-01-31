@@ -1,4 +1,4 @@
-[Live Preview](https://shopping-cart-o43v3npnk-lazingbirds-projects.vercel.app/)
+[Live Preview](https://shopping-cart-lsouzadev.vercel.app/)
 
 # Shopping Cart (Front-end e-commerce mockup for digital games and related products)
 
