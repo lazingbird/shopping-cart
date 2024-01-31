@@ -1,12 +1,13 @@
 import { v4 as uuidv4 } from "uuid";
 import games from "../../services/games";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 import SmallCarousel from "../carousels/SmallCarousel";
 import CarouselImage from "../carousels/CarouselImage";
 import fakeProducts from "../../data/fakeProducts";
 import Footer from "../Footer/Footer";
+import { ShopContext } from "../../ShopContext";
 
 const HomeMain = () => {
   const [smallCarouselData, setSmallCarouselData] = useState(null);

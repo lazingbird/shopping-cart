@@ -1,3 +1,5 @@
+import { useState, useEffect, useContext } from "react";
+
 import {
   faSteam,
   faWindows,
@@ -26,7 +28,10 @@ const CarouselImage = ({ data, index, onlyImage }) => {
           </div>
           <p className=" text-xs font-extrabold">{data.data.name}</p>
         </div>
-        <button className="flex items-center justify-center gap-3 bg-gray-700  p-3  text-sm font-bold text-white shadow-lg hover:bg-gray-600 hover:text-white">
+        <button
+          onClick={() => console.log(data)}
+          className="flex items-center justify-center gap-3 bg-gray-700  p-3  text-sm font-bold text-white shadow-lg hover:bg-gray-600 hover:text-white"
+        >
           <ShoppingCart size={20} />
           {data.price}
         </button>

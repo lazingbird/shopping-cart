@@ -6,32 +6,40 @@ import Playstation from "./components/pages/Playstation";
 import Xbox from "./components/pages/Xbox";
 import Login from "./components/pages/Login";
 import Cart from "./components/pages/Cart";
+import AllProducts from "./components/pages/AllProducts";
+import { useState } from "react";
 
 const Router = () => {
+  const [cart, setCart] = useState([]);
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Homepage />,
+      element: <Homepage cart={cart} setCart={setCart} />,
     },
     {
       path: "Steam",
-      element: <Steam />,
+      element: <Steam cart={cart} setCart={setCart} />,
     },
     {
       path: "Playstation",
-      element: <Playstation />,
+      element: <Playstation cart={cart} setCart={setCart} />,
     },
     {
       path: "Xbox",
-      element: <Xbox />,
+      element: <Xbox cart={cart} setCart={setCart} />,
     },
     {
       path: "Conta",
-      element: <Login />,
+      element: <Login cart={cart} setCart={setCart} />,
     },
     {
       path: "Carrinho",
-      element: <Cart />,
+      element: <Cart cart={cart} setCart={setCart} />,
+    },
+    {
+      path: "Catálogo",
+      element: <AllProducts cart={cart} setCart={setCart} />,
     },
   ]);
   return <RouterProvider router={router} />;

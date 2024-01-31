@@ -30,7 +30,8 @@
 }
 
 .catalog-grid-item {
-  height: 100%;
+  max-height: 287px;
+  max-width: 346px;
 }
 
 .catalog-grid-item img {

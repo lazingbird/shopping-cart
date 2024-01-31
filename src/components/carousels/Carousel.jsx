@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useContext } from "react";
+import { ShopContext } from "../../ShopContext";
 
 import { ChevronLeft, ChevronRight, ShoppingCart } from "react-feather";
 
@@ -7,8 +8,12 @@ const Carousel = ({
   children: slides,
   autoSlide = false,
   autoSlideInterval = 7000,
+  setCart,
+  cart,
 }) => {
   const [current, setCurrent] = useState(0);
+
+  console.log(cart);
 
   const handleDot = (index) => {
     setCurrent(index);
@@ -36,7 +41,7 @@ const Carousel = ({
       >
         {slides}
       </div>
-      <div className="text-roxoMuitoJogo absolute inset-0 flex items-center justify-between p-4">
+      <div className="absolute inset-0 flex items-center justify-between p-4 text-roxoMuitoJogo">
         <button
           onClick={handlePrev}
           className=" bg-white/90  p-1 shadow-xl hover:bg-white"
@@ -62,12 +67,18 @@ const Carousel = ({
         </div>
       </div>
       <div className="absolute left-8 top-6  scale-75 md:scale-100 ">
-        <h1 className="text-md text-roxoMuitoJogo hover:bg-roxoMuitoJogo flex items-center  justify-center  gap-3 bg-white p-4 font-extrabold shadow-lg hover:text-white">
+        <h1 className="text-md flex items-center justify-center gap-3  bg-white  p-4 font-extrabold text-roxoMuitoJogo shadow-lg hover:bg-roxoMuitoJogo hover:text-white">
           {games[current].data.name}
         </h1>
       </div>
       <div className="absolute bottom-6 right-8  scale-75 md:scale-100 ">
-        <button className="text-md text-roxoMuitoJogo hover:bg-roxoMuitoJogo flex items-center  justify-center  gap-3 bg-white p-4 font-extrabold shadow-lg hover:text-white">
+        <button
+          onClick={() =>
+            !cart.find((item) => item.id === games[current].id) &&
+            setCart(cart.concat(games[current]))
+          }
+          className="text-md flex items-center justify-center gap-3  bg-white  p-4 font-extrabold text-roxoMuitoJogo shadow-lg hover:bg-roxoMuitoJogo hover:text-white"
+        >
           <ShoppingCart />
           {games[current].price}
         </button>

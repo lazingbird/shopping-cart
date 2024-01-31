@@ -10,7 +10,7 @@ import CarouselImage from "../carousels/CarouselImage";
 
 import fakeProducts from "../../data/fakeProducts";
 
-const HomeHeader = () => {
+const HomeHeader = ({ setCart, cart }) => {
   const [carouselData, setCarouselData] = useState(null);
 
   useEffect(() => {
@@ -36,7 +36,12 @@ const HomeHeader = () => {
     <header>
       <Navbar focus={"Home"}></Navbar>
       <div className="flex w-full justify-center bg-gray-200">
-        <Carousel games={carouselData} autoSlide={true}>
+        <Carousel
+          setCart={setCart}
+          cart={cart}
+          games={carouselData}
+          autoSlide={true}
+        >
           {carouselData.map((object, index) => (
             <CarouselImage
               key={uuidv4()}

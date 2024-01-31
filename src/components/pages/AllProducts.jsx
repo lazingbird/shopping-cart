@@ -4,10 +4,15 @@ import { v4 as uuidv4 } from "uuid";
 import fakeProducts from "../../data/fakeProducts";
 import { useState, useEffect } from "react";
 
-import CatalogProducts from "./CatalogProducts";
+import CatalogProducts from "../mains/CatalogProducts";
 import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
+import { useLocation, useSearchParams } from "react-router-dom";
 
-const SteamMain = () => {
+const AllProducts = () => {
+  let [searchParams, setSearchParams] = useSearchParams();
+
+  const [filter, setFilter] = useState(null);
   const [products, setProducts] = useState(null);
   const [pages, setPages] = useState([1]);
   const [totalProducts, setTotalProducts] = useState(0);
@@ -15,10 +20,10 @@ const SteamMain = () => {
 
   const itemPerPage = 12;
 
-  const calcPages = () => {
+  const calcPages = (products) => {
     let nextPage = 2;
     let tempPages = [1];
-    fakeProducts.allSteamFakeProducts.map((prod, index) => {
+    products.map((prod, index) => {
       if ((index + 1) % itemPerPage === 0) {
         tempPages.push(nextPage);
         nextPage = nextPage + 1;
@@ -29,9 +34,17 @@ const SteamMain = () => {
   };
 
   useEffect(() => {
+    setFilter(searchParams.get("search"));
+    let products = fakeProducts.allSteamFakeProducts;
+
+    if (filter) {
+      products = products.filter((product) => {
+        return product.title.toLowerCase().match(filter.toLowerCase());
+      });
+    }
     const fetchData = async () => {
       let result = await Promise.all(
-        fakeProducts.allSteamFakeProducts
+        products
           .sort((a, b) => (a.title > b.title ? 1 : -1))
           .slice(
             currentPage * itemPerPage,
@@ -47,10 +60,10 @@ const SteamMain = () => {
       );
       setProducts(result);
       setTotalProducts(result.length);
-      setPages(calcPages());
+      setPages(calcPages(products));
     };
     fetchData();
-  }, [currentPage]);
+  }, [currentPage, filter, searchParams]);
 
   const handleUpdatePage = async (page) => {
     setCurrentPage(page);
@@ -61,6 +74,7 @@ const SteamMain = () => {
   }
   return (
     <>
+      <Navbar focus={"Catálogo"} />
       <main>
         <section className="mt-10 flex flex-col items-center">
           <h2 className="mb-6 text-3xl font-bold text-roxoMuitoJogo">
@@ -91,4 +105,4 @@ const SteamMain = () => {
   );
 };
 
-export default SteamMain;
+export default AllProducts;
