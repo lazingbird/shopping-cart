@@ -38,17 +38,17 @@ const HomeMain = ({ setCart, cart }) => {
           <div className="mark-grid w-8/12 items-center justify-center">
             <img
               className="h-full w-full "
-              src="src/assets/playstation-cartão.png"
+              src="https://www.muitojogo.com.br/wp-content/uploads/2020/11/PlaystationCartao1.png"
               alt="Logo da Playstation informando a possibilidade de parcelar os produtos da marca em até 12x"
             />
             <img
               className="h-full w-full "
-              src="src/assets/xbox-cartão.png"
+              src="https://www.muitojogo.com.br/wp-content/uploads/2020/11/xboxCartao1.png"
               alt="Logo da Xbox informando a possibilidade de parcelar os produtos da marca em até 12x"
             />
             <img
               className="col-span-2 "
-              src="src/assets/freefire-créditos.gif"
+              src="https://www.muitojogo.com.br/wp-content/uploads/2020/10/FreeFire-1024x512.gif"
               alt="Imagem promocional de Freefire informando bônus de 10% de sua moeda na compra"
             />
           </div>
