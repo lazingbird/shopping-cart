@@ -10,8 +10,8 @@ Study project for the **The Odin Project** course to practice React and learn ho
 - React;
 - React Router;
 - React Testing Library;
-- Vitest
-- Tailwind
+- Vitest;
+- Tailwind;
 - Axios;
 - Prettier;
 - Eslint.
