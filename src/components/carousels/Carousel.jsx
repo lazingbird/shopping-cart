@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { ShopContext } from "../../ShopContext";
 
-import { ChevronLeft, ChevronRight, ShoppingCart } from "react-feather";
+import { ChevronLeft, ChevronRight, ShoppingCart, Check } from "react-feather";
 
 const Carousel = ({
   games,
@@ -13,8 +13,6 @@ const Carousel = ({
 }) => {
   const [current, setCurrent] = useState(0);
 
-  console.log(cart);
-
   const handleDot = (index) => {
     setCurrent(index);
   };
@@ -25,6 +23,16 @@ const Carousel = ({
 
   const handleNext = () => {
     setCurrent((current) => (current === slides.length - 1 ? 0 : current + 1));
+  };
+
+  const handleCart = (product) => {
+    console.log(cart);
+    if (!cart.find((item) => item.id === product.id)) {
+      setCart(cart.concat(product));
+      product.inCart = true;
+    } else {
+      alert("Produto já está no carrinho");
+    }
   };
 
   useEffect(() => {
@@ -72,16 +80,20 @@ const Carousel = ({
         </h1>
       </div>
       <div className="absolute bottom-6 right-8  scale-75 md:scale-100 ">
-        <button
-          onClick={() =>
-            !cart.find((item) => item.id === games[current].id) &&
-            setCart(cart.concat(games[current]))
-          }
-          className="text-md flex items-center justify-center gap-3  bg-white  p-4 font-extrabold text-roxoMuitoJogo shadow-lg hover:bg-roxoMuitoJogo hover:text-white"
-        >
-          <ShoppingCart />
-          {games[current].price}
-        </button>
+        {!cart.find((item) => item.title === games[current].title) ? (
+          <button
+            onClick={() => handleCart(games[current])}
+            className="text-md flex items-center justify-center gap-3  bg-white  p-4 font-extrabold text-roxoMuitoJogo shadow-lg hover:bg-roxoMuitoJogo hover:text-white"
+          >
+            <ShoppingCart />
+            {games[current].price}
+          </button>
+        ) : (
+          <button className="text-md flex cursor-default items-center justify-center gap-3  bg-gray-200 p-4  font-extrabold text-gray-400 opacity-95 shadow-lg ">
+            <Check />
+            {games[current].price}
+          </button>
+        )}
       </div>
     </div>
   );

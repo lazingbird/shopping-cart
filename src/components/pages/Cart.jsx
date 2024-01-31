@@ -19,7 +19,15 @@ const Cart = ({ cart, setCart }) => {
           <div className="flex flex-col gap-5">
             {cart.map((product, index) => (
               <div key={product.id} className="flex w-full items-center  ">
-                <img src={product.data.background_image} className="max-h-36" />
+                {product.img ? (
+                  <img src={product.img} className="max-h-36" />
+                ) : (
+                  <img
+                    src={product.data.background_image}
+                    className="max-h-36"
+                  />
+                )}
+
                 <div className="flex h-36 w-full items-center justify-center gap-10 border bg-gray-100 px-8  ">
                   <div className="w-3/5">
                     <h3 className="text-xl font-bold">{product.title}</h3>

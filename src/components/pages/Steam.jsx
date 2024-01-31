@@ -1,11 +1,11 @@
 import Navbar from "../Navbar/Navbar";
 import SteamMain from "../mains/SteamMain";
 
-const Steam = () => {
+const Steam = ({ cart, setCart }) => {
   return (
     <>
       <Navbar focus={"Steam"}></Navbar>
-      <SteamMain />
+      <SteamMain cart={cart} setCart={setCart} />
     </>
   );
 };

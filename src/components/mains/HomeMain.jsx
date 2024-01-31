@@ -9,7 +9,7 @@ import fakeProducts from "../../data/fakeProducts";
 import Footer from "../Footer/Footer";
 import { ShopContext } from "../../ShopContext";
 
-const HomeMain = () => {
+const HomeMain = ({ setCart, cart }) => {
   const [smallCarouselData, setSmallCarouselData] = useState(null);
 
   useEffect(() => {
@@ -37,17 +37,17 @@ const HomeMain = () => {
         <section className=" mt-10 hidden flex-col items-center justify-center lg:flex">
           <div className="mark-grid w-8/12 items-center justify-center">
             <img
-              className="h-full w-full cursor-pointer"
+              className="h-full w-full "
               src="src/assets/playstation-cartão.png"
               alt="Logo da Playstation informando a possibilidade de parcelar os produtos da marca em até 12x"
             />
             <img
-              className="h-full w-full cursor-pointer"
+              className="h-full w-full "
               src="src/assets/xbox-cartão.png"
               alt="Logo da Xbox informando a possibilidade de parcelar os produtos da marca em até 12x"
             />
             <img
-              className="col-span-2 cursor-pointer"
+              className="col-span-2 "
               src="src/assets/freefire-créditos.gif"
               alt="Imagem promocional de Freefire informando bônus de 10% de sua moeda na compra"
             />
@@ -66,6 +66,8 @@ const HomeMain = () => {
                   key={uuidv4()}
                   data={data}
                   index={index}
+                  cart={cart}
+                  setCart={setCart}
                 ></CarouselImage>
               ))}
             </SmallCarousel>

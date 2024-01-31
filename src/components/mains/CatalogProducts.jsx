@@ -5,9 +5,18 @@ import {
   faXbox,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ShoppingCart } from "react-feather";
+import { ShoppingCart, Check } from "react-feather";
 
-const CatalogProducts = ({ data }) => {
+const CatalogProducts = ({ data, cart, setCart }) => {
+  const handleCart = (product) => {
+    console.log(cart);
+    if (!cart.find((item) => item.id === product.id)) {
+      setCart(cart.concat(product));
+      product.inCart = true;
+    } else {
+      alert("Produto já está no carrinho");
+    }
+  };
   return (
     <div className="catalog-grid-item shadow-lg">
       <div className="h-full">
@@ -24,10 +33,20 @@ const CatalogProducts = ({ data }) => {
             </div>
             <p className=" text-xs font-extrabold">{data.title}</p>
           </div>
-          <button className="flex items-center justify-center gap-3 bg-gray-700  p-3  text-sm font-bold text-white shadow-lg hover:bg-gray-600 hover:text-white">
-            <ShoppingCart size={15} />
-            {data.price}
-          </button>
+          {!cart.find((item) => item.title === data.title) ? (
+            <button
+              onClick={() => handleCart(data)}
+              className="flex items-center justify-center gap-3 bg-gray-700  p-3  text-sm font-bold text-white shadow-lg hover:bg-gray-600 hover:text-white"
+            >
+              <ShoppingCart size={20} />
+              {data.price}
+            </button>
+          ) : (
+            <button className="text-gray-400opacity-95 flex cursor-default items-center justify-center gap-3 bg-gray-200 p-3 text-sm font-bold shadow-lg">
+              <Check size={20} />
+              {data.price}
+            </button>
+          )}
         </div>
       </div>
     </div>

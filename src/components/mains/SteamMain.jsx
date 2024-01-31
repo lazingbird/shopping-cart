@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import CatalogProducts from "./CatalogProducts";
 import Footer from "../Footer/Footer";
 
-const SteamMain = () => {
+const SteamMain = ({ cart, setCart }) => {
   const [products, setProducts] = useState(null);
   const [pages, setPages] = useState([1]);
   const [totalProducts, setTotalProducts] = useState(0);
@@ -18,7 +18,7 @@ const SteamMain = () => {
   const calcPages = () => {
     let nextPage = 2;
     let tempPages = [1];
-    fakeProducts.allSteamFakeProducts.map((prod, index) => {
+    fakeProducts.allFakeProducts.map((prod, index) => {
       if ((index + 1) % itemPerPage === 0) {
         tempPages.push(nextPage);
         nextPage = nextPage + 1;
@@ -28,10 +28,20 @@ const SteamMain = () => {
     return tempPages;
   };
 
+  const handleCart = (product) => {
+    console.log(cart);
+    if (!cart.find((item) => item.id === product.id)) {
+      setCart(cart.concat(product));
+      product.inCart = true;
+    } else {
+      alert("Produto já está no carrinho");
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       let result = await Promise.all(
-        fakeProducts.allSteamFakeProducts
+        fakeProducts.allFakeProducts
           .sort((a, b) => (a.title > b.title ? 1 : -1))
           .slice(
             currentPage * itemPerPage,
@@ -68,7 +78,12 @@ const SteamMain = () => {
           </h2>
           <div className="catalog-grid grid w-8/12 ">
             {products.map((product) => (
-              <CatalogProducts key={uuidv4()} data={product}></CatalogProducts>
+              <CatalogProducts
+                cart={cart}
+                setCart={setCart}
+                key={uuidv4()}
+                data={product}
+              ></CatalogProducts>
             ))}
           </div>
           <div className="mt-5 flex gap-5">

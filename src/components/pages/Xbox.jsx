@@ -2,9 +2,19 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 
 import fakeProducts from "../../data/fakeProducts";
-import { ShoppingCart } from "react-feather";
+import { ShoppingCart, Check } from "react-feather";
 
-const Xbox = () => {
+const Xbox = ({ cart, setCart }) => {
+  const handleCart = (product) => {
+    console.log(cart);
+    if (!cart.find((item) => item.id === product.id)) {
+      setCart(cart.concat(product));
+      product.inCart = true;
+    } else {
+      alert("Produto já está no carrinho");
+    }
+  };
+
   return (
     <>
       <Navbar focus={"Xbox"}></Navbar>
@@ -29,12 +39,22 @@ const Xbox = () => {
                     src={product.img}
                     alt={`Capa do produto ${product.title}`}
                   ></img>
-                  <div className="details h-3/12 flex h-24 items-center justify-between   bg-gray-950 p-4 text-white">
+                  <div className="details h-3/12 flex flex-col items-center justify-between gap-3  bg-gray-950 p-4 text-white">
                     <p className=" text-xs font-extrabold">{product.title}</p>
-                    <button className="flex items-center justify-center gap-3 bg-gray-700  p-3  text-sm font-bold text-white shadow-lg hover:bg-gray-600 hover:text-white">
-                      <ShoppingCart size={15} />
-                      {product.price}
-                    </button>
+                    {!cart.find((item) => item.title === product.title) ? (
+                      <button
+                        onClick={() => handleCart(product)}
+                        className="flex items-center justify-center gap-3 bg-gray-700  p-3  text-sm font-bold text-white shadow-lg hover:bg-gray-600 hover:text-white"
+                      >
+                        <ShoppingCart size={20} />
+                        {product.price}
+                      </button>
+                    ) : (
+                      <button className="flex cursor-default items-center justify-center gap-3 bg-gray-200 p-3 text-sm font-bold text-gray-400 opacity-95 shadow-lg">
+                        <Check size={20} />
+                        {product.price}
+                      </button>
+                    )}
                   </div>
                 </div>
               ))}
@@ -57,12 +77,22 @@ const Xbox = () => {
                   src={product.img}
                   alt={`Capa do produto ${product.title}`}
                 ></img>
-                <div className="details h-3/12 flex h-24 items-center justify-between   bg-gray-950 p-4 text-white">
+                <div className="details h-3/12 flex flex-col items-center justify-between gap-3  bg-gray-950 p-4 text-white">
                   <p className=" text-xs font-extrabold">{product.title}</p>
-                  <button className="flex items-center justify-center gap-3 bg-gray-700  p-3  text-sm font-bold text-white shadow-lg hover:bg-gray-600 hover:text-white">
-                    <ShoppingCart size={15} />
-                    {product.price}
-                  </button>
+                  {!cart.find((item) => item.title === product.title) ? (
+                    <button
+                      onClick={() => handleCart(product)}
+                      className="flex items-center justify-center gap-3 bg-gray-700  p-3  text-sm font-bold text-white shadow-lg hover:bg-gray-600 hover:text-white"
+                    >
+                      <ShoppingCart size={20} />
+                      {product.price}
+                    </button>
+                  ) : (
+                    <button className="flex cursor-default items-center justify-center gap-3 bg-gray-200 p-3 text-sm font-bold text-gray-400 opacity-95 shadow-lg">
+                      <Check size={20} />
+                      {product.price}
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
