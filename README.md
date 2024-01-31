@@ -1,8 +1,27 @@
-# React + Vite
+[Live Preview](https://shopping-cart-o43v3npnk-lazingbirds-projects.vercel.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Shopping Cart (Digital games and related products e-commerce mockup)
 
-Currently, two official plugins are available:
+Study project for the **The Odin Project** course to practice React and learn how to handle routes with React Router. Styled with Tailwind and deployed to Vercel. Game data fetched from the [RAWG Video Game API](https://rawg.io/apidocs).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## What I used:
+
+- Vite;
+- React;
+- React Router;
+- React Testing Library;
+- Vitest
+- Tailwind
+- Axios;
+- Prettier;
+- Eslint.
+
+## Screenshots:
+
+![Home](https://i.imgur.com/sDpb3CN.png)
+![Carrinho](https://i.imgur.com/vrwdx4A.png)
+![Steam](https://i.imgur.com/prX0ceN.png)
+![Playstation](https://i.imgur.com/H4f7lNA.png)
+![Xbox](https://i.imgur.com/9SvbIhO.png)
+
+
