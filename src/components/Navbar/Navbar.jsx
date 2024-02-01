@@ -15,7 +15,9 @@ const Navbar = ({ focus }) => {
       <header className="">
         <nav className="flex w-full flex-col items-center justify-between   text-slate-200">
           <div className="flex h-20 w-full items-center justify-between bg-roxoMuitoJogo  px-3 pb-3 pt-3 text-slate-200">
-            <Logo></Logo>
+            <Link to="/">
+              <Logo></Logo>
+            </Link>
             <form className="hidden lg:mr-32 lg:flex">
               <input
                 name="search"
